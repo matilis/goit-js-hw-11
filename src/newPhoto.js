@@ -4,7 +4,7 @@ export const newPhoto = response => {
       picture =>
         `
     <div class="photo-card">
-      <a href="${picture.largeImageURL}" class="photo-card-list"><img src="${picture.webformatURL}" alt="${picture.tags}" loading="lazy" class="photo-card-size" /></a>
+      <a href="${picture.largeImageURL}" ><img src="${picture.webformatURL}" alt="${picture.tags}" loading="lazy" class="photo-card-size" /></a>
         <div class="info">
           <p class="info-item">
             <b>Likes</b>

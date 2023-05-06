@@ -4,7 +4,8 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { newPhoto } from './newPhoto';
 
-const btnEl = document.querySelector('.btn-search');
+const formEl = document.querySelector('.search-form');
+const btnEl = document.querySelector('.search-image');
 const inputEl = document.querySelector('input');
 const galleryEl = document.querySelector('.gallery');
 const loadMoreBtn = document.querySelector('.load-more');
@@ -53,6 +54,13 @@ const fetchPhotos = () => {
       );
     });
 };
+
+const onClick = () => {
+  setTimeout(() => {
+    fetchPhotos();
+  }, 1000);
+};
+
 const fetchNewPhotos = () => {
   photoParams().then(response => {
     const totalHits = response.data.total;
@@ -76,10 +84,14 @@ const fetchNewPhotos = () => {
   });
 };
 
+const backgroundShadow = () => {
+  galleryEl.classList.add('background-shadow');
+};
 btnEl.addEventListener('click', event => {
   event.preventDefault();
   page = 1;
-  fetchPhotos();
+  onClick();
+  backgroundShadow();
 });
 
 loadMoreBtn.addEventListener('click', () => {
