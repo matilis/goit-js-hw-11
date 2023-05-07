@@ -30,6 +30,23 @@ const photoParams = async () => {
   return photoParamsUrl;
 };
 
+// OR
+
+// const photoParams = async () => {
+//   const API_URL = 'https://pixabay.com/api/?';
+//   return await axios.get(API_URL, {
+//     params: {
+//       key: '36028028-2964cb2561d4c05b8daf5348d',
+//       q: inputEl.value,
+//       image_type: 'photo',
+//       orientation: 'horizontal',
+//       safesearch: 'true',
+//       page: page,
+//       per_page: totalPages,
+//     },
+//   });
+// };
+
 const fetchPhotos = () => {
   photoParams()
     .then(response => {
